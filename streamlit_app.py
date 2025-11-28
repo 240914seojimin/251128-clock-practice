@@ -15,7 +15,7 @@ css = """
 }
 .overlay {
     position: fixed; top:0; left:0; width:100%; height:100%;
-    background: rgba(255, 182, 193, 0.35); /* 연한 핑크 오버레이 */
+    background: rgba(0, 0, 0, 0); /* 오버레이 제거 - 학교 사진 그대로 표시 */
     z-index: 0;
     pointer-events: none;
 }
