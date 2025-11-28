@@ -36,8 +36,8 @@ st.markdown(css, unsafe_allow_html=True)
 
 with st.container():
     st.markdown("<div class='content'>", unsafe_allow_html=True)
-    st.markdown("<div class='big-title'>🎈 지민이의 외출 준비</div>", unsafe_allow_html=True)
-    st.markdown("<div class='subtitle'>핑크핑크한 방에서 준비를 도와줘요.</div>", unsafe_allow_html=True)
+    st.markdown("<div class='big-title'>🎈 지민이의 등교 준비</div>", unsafe_allow_html=True)
+    # subtitle removed as requested
 
     col1, col2 = st.columns([1, 1])
 
