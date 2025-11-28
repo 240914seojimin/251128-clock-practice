@@ -70,6 +70,7 @@ with st.container():
         col_clock, col_button = st.columns([3, 1])
         
         with col_clock:
+            st.markdown("<div style='text-align:center; font-size:20px; color:#2e0b2e; font-weight:600; margin-bottom:8px;'>오늘 지민이의 등교 시간이야!</div>", unsafe_allow_html=True)
             hour = st.session_state.correct_hour
             minute = st.session_state.correct_minute
             
@@ -112,7 +113,7 @@ with st.container():
                 st.session_state.user_answer_submitted = False
         
         # 답 입력 영역
-        st.markdown("### 지민이는 몇 시에 학교에 도착했을까?")
+        st.markdown("### 지민이의 등교 시간을 입력해줘!")
         
         col_hour, col_min = st.columns([1, 1])
         with col_hour:
