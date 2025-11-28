@@ -2,8 +2,8 @@ import streamlit as st
 
 st.set_page_config(page_title="지민이의 등교 준비", layout="centered")
 
-# 배경 이미지(침대, 책상이 있는 아이 방) - Unsplash 이미지 사용
-BACKGROUND_IMG = "https://images.unsplash.com/photo-1578500494198-246f612d03b3?auto=format&fit=crop&w=1400&q=80"
+# 배경 이미지(학교) - Unsplash 이미지 사용
+BACKGROUND_IMG = "https://images.unsplash.com/photo-1513258917318-a3406841bd33?auto=format&fit=crop&w=1400&q=80"
 
 css = """
 <style>
