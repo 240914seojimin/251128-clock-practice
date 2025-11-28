@@ -91,8 +91,8 @@ with st.container():
         .modal-close-btn:hover { background:#f3b9c9 }
         </style>
         <div class="modal-overlay">
-          <div class="modal-box">
-            <a href="?close_modal=1" class="modal-close-btn">닫기</a>
+                    <div class="modal-box" id="js-modal-box">
+                        <a href="#" class="modal-close-btn" onclick="document.getElementById('js-modal-box').parentElement.style.display='none'; return false;">닫기</a>
             <div class="modal-title">게임 방법</div>
             <div class="modal-body">지민이가 학교에 제시간에 가도록 도와줘! 그러기 위해선 시계를 정확하게 읽어줘야 해! 모두 지민이를 도와줘!</div>
           </div>
