@@ -29,8 +29,13 @@ css = """
     color:#4a083f; margin-bottom:18px;
 }
 .small-instruction { font-size:14px; color:#4a083f; margin-bottom:18px; }
+.school-icon {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 200px; z-index: 0; opacity: 0.15; pointer-events: none;
+}
 </style>
 <div class="overlay"></div>
+<div class="school-icon">🏫</div>
 """
 css = css.replace("{{IMG}}", BACKGROUND_IMG)
 st.markdown(css, unsafe_allow_html=True)
