@@ -79,16 +79,44 @@ with st.container():
             hour_angle = ((hour % 12) * 30 + minute * 0.5) - 90  # 시침: 30도/시간
             
             # SVG 시계 생성
+            # 틱 생성 (60개: 12개의 큰 틱과 48개의 작은 틱)
+            ticks = ""
+            for i in range(60):
+                angle = i * 6 - 90
+                if i % 5 == 0:
+                    # 큰 틱 (숫자 위치)
+                    inner_r = 120
+                    outer_r = 140
+                    stroke_width = 3
+                else:
+                    # 작은 틱
+                    inner_r = 130
+                    outer_r = 140
+                    stroke_width = 1
+                x1 = 150 + inner_r * math.cos(math.radians(angle))
+                y1 = 150 + inner_r * math.sin(math.radians(angle))
+                x2 = 150 + outer_r * math.cos(math.radians(angle))
+                y2 = 150 + outer_r * math.sin(math.radians(angle))
+                ticks += f'<line x1="{x1:.2f}" y1="{y1:.2f}" x2="{x2:.2f}" y2="{y2:.2f}" stroke="black" stroke-width="{stroke_width}"/>\n'
+            
+            # 숫자 생성 (1~12)
+            numbers = ""
+            for i in range(1, 13):
+                angle = (i * 30) - 90
+                x = 150 + 105 * math.cos(math.radians(angle))
+                y = 150 + 105 * math.sin(math.radians(angle))
+                numbers += f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="middle" font-size="18" font-weight="bold">{i}</text>\n'
+            
             clock_svg = f"""
             <svg width="300" height="300" viewBox="0 0 300 300">
               <!-- 배경 -->
               <circle cx="150" cy="150" r="140" fill="white" stroke="black" stroke-width="3"/>
               
-              <!-- 시간 표시 -->
-              <text x="150" y="40" text-anchor="middle" font-size="20" font-weight="bold">12</text>
-              <text x="260" y="155" text-anchor="middle" font-size="20" font-weight="bold">3</text>
-              <text x="150" y="270" text-anchor="middle" font-size="20" font-weight="bold">6</text>
-              <text x="40" y="155" text-anchor="middle" font-size="20" font-weight="bold">9</text>
+              <!-- 틱 -->
+              {ticks}
+              
+              <!-- 숫자 -->
+              {numbers}
               
               <!-- 중심점 -->
               <circle cx="150" cy="150" r="5" fill="black"/>
